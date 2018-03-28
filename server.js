@@ -1,5 +1,3 @@
-/* eslint no-new:0 */
-
 import express from 'express';
 import bodyParser from 'body-parser';
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
@@ -29,6 +27,7 @@ const ws = createServer(app);
 ws.listen(PORT, () => {
   console.log(`Apollo Server is now running on http://localhost:${PORT}`);
   // Set up the WebSocket for handling GraphQL subscriptions
+  // eslint-disable-next-line
   new SubscriptionServer({
     execute,
     subscribe,
